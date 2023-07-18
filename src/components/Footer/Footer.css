@@ -8,6 +8,12 @@ footer {
     flex-shrink: 0;
     background: #252525;
     margin: 0;
+    position: relative;
+    margin-top: auto;
+ 
+   
+
+    
     
 }
 footer > p{
