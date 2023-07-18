@@ -3,9 +3,6 @@ import './Footer.css'
 
 export default function Footer() {
   return (
-    <footer>
-        <p>Ⓒ 2022 #VANLIFE</p>
-
-    </footer>
+    <footer>&#169; 2023 #VANLIFE</footer>
   )
 }

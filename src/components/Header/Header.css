@@ -42,3 +42,8 @@ header a:hover {
 .link-button:hover {
   transform: translate(1px, 1px);
 }
+.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}

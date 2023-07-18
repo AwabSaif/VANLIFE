@@ -8,6 +8,8 @@ import Vans from './Pages/Vans/Vans';
 import DetailVan from './Pages/DetailVan/DetailVan';
 import Dashboard from './Pages/Host/Dashboard/Dashboard';
 import Income from './Pages/Host/Income/Income';
+import HostVans from './Pages/Host/HostVans/HostVans';
+import HostVansDetail from './Pages/Host/HostVans/HostVansDetail/HostVansDetail';
 import Reviews from './Pages/Host/Reviews/Reviews';
 import Container from"./components/Container/Container"
 import HostLayout from"./components/HostLayout/HostLayout"
@@ -25,16 +27,19 @@ export default function App() {
 <BrowserRouter>
 
 <Routes>
-<Route element={<Container/>}>
+<Route path='/' element={<Container/>}>
 
-<Route path='/' element={<Home/>}/>
-<Route path='/about' element={<About/>}/>
-<Route path='/vans' element={<Vans/>}/>
-<Route path='/vans/:id' element={<DetailVan/>}/>
+<Route index element={<Home/>}/>
+<Route path='about' element={<About/>}/>
+
+<Route path='vans' element={<Vans/>}/>
+<Route path='vans/:id' element={<DetailVan/>}/>
 
 <Route path='host' element={<HostLayout/>}>
-<Route path='host' element={<Dashboard/>}/>
+<Route index element={<Dashboard/>}/>
 <Route path='income' element={<Income/>}/> 
+<Route path='vans' element={<HostVans/>}/> 
+<Route path='vans/:id' element={<HostVansDetail/>}/> 
 <Route path='reviews' element={<Reviews/>}/> 
 </Route>
  

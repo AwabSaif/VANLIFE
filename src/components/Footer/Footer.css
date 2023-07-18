@@ -1,30 +1,12 @@
+
 footer {
+    background-color: #161616;
+    color: #AAAAAA;
+    height: 74px;
     display: flex;
-    width: 100%;
-    height: 4.67175rem;
-    padding: 1.60506rem 6.64275rem 1.57175rem 6.625rem;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
-    background: #252525;
-    margin: 0;
-    position: relative;
     margin-top: auto;
- 
-   
-
-    
-    
-}
-footer > p{
-    width: 100%;
-    height: 1.49494rem;
-    flex-shrink: 0;
-    color: #AAA;
-    text-align: center;
-    font-family: Inter;
-    font-size: 0.875rem;
-    font-style: normal;
     font-weight: 500;
-    line-height: 1.43269rem; /* 163.733% */
 }
