@@ -8,7 +8,7 @@ import bgImg from '../../assets/images/image 54.png'
 export default function About() {
   return (
     <>
-    <Header/>
+  
   <div className="about-page-container">
             <img src={bgImg} className="about-hero-image" />
             <div className="about-page-content">
@@ -21,7 +21,7 @@ export default function About() {
                 <Link className="link-button" to="/vans">Explore our vans</Link>
             </div>
         </div>
-        <Footer/>
+        
         </>
   )
 }

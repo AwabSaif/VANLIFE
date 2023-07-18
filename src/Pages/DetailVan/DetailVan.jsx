@@ -15,7 +15,7 @@ export default function DetailVan() {
 
     return (
         <>
-        <Header/>
+  
         <div className="van-detail-container">
             {van ? (
                 <div className="van-detail">
