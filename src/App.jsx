@@ -6,7 +6,10 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import "./components/Server/server"
 import Vans from './Pages/Vans/Vans';
-import vanDEtail from './Pages/vanDEtail/vanDEtail';
+import DetailVan from './Pages/DetailVan/DetailVan';
+
+
+
 
 
 
@@ -22,7 +25,7 @@ export default function App() {
 <Route path='/' element={<Home/>}/>
 <Route path='/about' element={<About/>}/>
 <Route path='/vans' element={<Vans/>}/>
-<Route path='/vans/:id' element={<vanDEtail/>}/>
+<Route path='/vans/:id' element={<DetailVan/>}/>
 
 </Routes>
 </BrowserRouter>
