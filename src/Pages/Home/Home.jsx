@@ -1,9 +1,9 @@
 import React from 'react'
-import './Home.css'
-import Header from '../../Header/Header'
-import Footer from '../../Footer/Footer'
 import { Link } from 'react-router-dom'
-import bgimag from '../../../assets/images/image 53.png'
+import './Home.css'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+import bgimag from '../../assets/images/image 53.png'
 
 export default function Home() {
   return (

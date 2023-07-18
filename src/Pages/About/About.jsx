@@ -1,9 +1,9 @@
 import React from 'react'
 import './About.css'
 import { Link } from 'react-router-dom'
-import Header from '../../Header/Header'
-import Footer from '../../Footer/Footer'
-import bgImg from '../../../assets/images/image 54.png'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+import bgImg from '../../assets/images/image 54.png'
 
 export default function About() {
   return (
