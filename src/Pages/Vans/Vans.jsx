@@ -9,7 +9,7 @@ export default function Vans() {
     const [searchParams ,setSearchParams] = useSearchParams([])
     const [vans, setVans] = useState([])
     const typeFilter = searchParams.get("type")
-    console.log(typeFilter)
+
     
  useEffect(() => {
       fetch("/api/vans")
@@ -29,16 +29,42 @@ export default function Vans() {
               <i className={`van-type ${van.type} selected`}>{van.type}</i>
           </Link>
       </div>
-  ))
+  )) 
+  function handleFilterChange(key, value) {
+    setSearchParams(prevParams => {
+        if (value === null) {
+            prevParams.delete(key)
+        } else {
+            prevParams.set(key, value)
+        }
+        return prevParams
+    })
+}
 
   return (
       <div className="van-list-container">
           <h1>Explore our van options</h1>
           <div className="van-list-filter-buttons">
-        <Link to="?type=simple" className="van-type simple" >Simple</Link>
-        <Link to="?type=rugged" className="van-type rugged">Rugged</Link>
-        <Link to="?type=luxury" className="van-type luxury" >Luxury</Link>
-        <Link to="."  className="van-type clear-filters" >Clear filters</Link>
+            <button 
+            onClick={() => handleFilterChange("type",'simple')} 
+            className="van-type simple"  >
+                Simple
+                </button>
+            <button 
+            onClick={() => handleFilterChange("type",'rugged')} 
+            className="van-type rugged" >
+                Rugged
+                </button>
+            <button 
+            onClick={() => handleFilterChange("type",'luxury')} 
+             className="van-type luxury" >
+                Luxury
+                </button>
+           { typeFilter ? (<button 
+           onClick={() => handleFilterChange("type",null)} 
+           className="van-type clear-filters">
+            Clear filters
+            </button>) : null}
         </div>
           <div className="van-list">
               {vanElements}
