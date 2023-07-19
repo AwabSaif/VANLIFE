@@ -25,6 +25,17 @@ van-list-container {
     cursor: pointer;
 }
 
+
+.van-list-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.van-list-filter-buttons > a {
+    margin-right: 15px;
+}
+
+
 .van-type {
     height: 34px;
     padding: 6px 26px;
