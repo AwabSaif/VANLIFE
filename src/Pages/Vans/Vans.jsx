@@ -1,21 +1,40 @@
 import {React , useEffect ,useState} from 'react'
 import { Link , useSearchParams } from 'react-router-dom'
 import './Vans.css'
-
-
+import {getVans} from '../../API/api'
+import Loaders from '../../components/Loaders/Loaders'
 
 
 export default function Vans() {
     const [searchParams ,setSearchParams] = useSearchParams([])
     const [vans, setVans] = useState([])
+    const [loading , setLoading] = useState(false)
+    const [error, setError] = useState(null)
+
+    
     const typeFilter = searchParams.get("type")
+
 
     
  useEffect(() => {
-      fetch("/api/vans")
-          .then(res => res.json())
-          .then(data => setVans(data.vans))
-  }, [])
+    async function loadVans() {
+        setLoading(true)
+        try {
+            const data = await getVans()
+            setVans(data)
+        } catch (err) {
+            setError(err)
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    loadVans()
+}, [])
+
+
+
+
   const displayedVans =typeFilter ?
   vans.filter(van => van.type === typeFilter) : vans
   const vanElements = displayedVans.map(van => (
@@ -41,6 +60,18 @@ export default function Vans() {
     })
 }
 
+  if(loading){
+    return (
+        <>
+    <h1>Loading...</h1>
+    <Loaders/>
+        </>
+    )
+  }
+    
+    if (error) {
+        return <h1>There was an error: {error}</h1>
+    }
   return (
       <div className="van-list-container">
           <h1>Explore our van options</h1>

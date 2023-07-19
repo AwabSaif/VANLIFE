@@ -1,6 +1,7 @@
 import {React ,useEffect ,useState} from "react"
 import { useParams, Link, NavLink ,Outlet } from "react-router-dom"
 import './HostVansDetail.css'
+import Loaders from "../../../../components/Loaders/Loaders"
 
 export default function HostVanDetail() {
     const { id } = useParams()
@@ -19,7 +20,12 @@ export default function HostVanDetail() {
         }, [])
 
     if (!currentVan) {
-        return <h1>Loading...</h1>
+        return (
+        <>
+        <h2>Loading...</h2>
+        <Loaders/>
+        </>
+        )
     }
 
     return (
