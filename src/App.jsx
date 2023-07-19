@@ -19,6 +19,7 @@ import Container from "./components/Container/Container"
 import Error from "./components/Error/Error"
 import NotFound from "./Pages/NotFound/NotFound"
 import HostLayout from "./components/HostLayout/HostLayout"
+import AuthRequired from "./components/AuthRequired/AuthRequired"
 import Loaders from './components/Loaders/Loaders';
 
 
@@ -45,6 +46,8 @@ export default function App() {
           />
           <Route path="vans/:id" element={<DetailVan />} />
 
+          <Route  element={<AuthRequired />}>
+
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
@@ -57,6 +60,7 @@ export default function App() {
                 <Route path="pricing" element={<HostVanPricing />} />
 
               </Route>
+          </Route>
 
             </Route>
           </Route>

@@ -49,3 +49,6 @@
     background-color: #e98e4c;
     border: #ffffff solid 1px;
 }
+.login-error {
+    color: red;
+}
