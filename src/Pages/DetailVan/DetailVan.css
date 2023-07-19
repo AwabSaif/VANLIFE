@@ -8,8 +8,10 @@
     text-decoration: none;
 }
 
-.van-detail-container .back-button:visited {
- 
+  
+.host-van-link-wrapper {
+    color: unset;
+    text-decoration: unset;
 }
 
 .van-detail-container .back-button span {

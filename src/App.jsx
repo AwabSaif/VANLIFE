@@ -15,6 +15,7 @@ import HostVanPhotos from './Pages/Host/HostVanInfo/HostVanPhotos';
 import HostVanPricing from './Pages/Host/HostVanInfo/HostVanPricing';
 import Reviews from './Pages/Host/Reviews/Reviews';
 import Container from "./components/Container/Container"
+import NotFound from "./Pages/NotFound/NotFound"
 import HostLayout from "./components/HostLayout/HostLayout"
 
 
@@ -43,13 +44,14 @@ export default function App() {
             <Route index element={<HostVans />} />
             <Route path=":id" element={<HostVanDetail />} >
                 <Route index element={<HostVanInfo/>} />
-              <Route path="pricing" element={<HostVanPhotos/>} />
-              <Route path="photos" element={<HostVanPricing/>} />
-                  
+              <Route path="photos" element={<HostVanPhotos/>} />
+              <Route path="pricing" element={<HostVanPricing/>} />
+                
             </Route>
 
             </Route>
           </Route>
+          <Route path='*' element={<NotFound/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

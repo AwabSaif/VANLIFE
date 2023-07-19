@@ -12,7 +12,8 @@ van-list-container {
 
 .van-tile a {
     color: #161616;
-    text-decoration: none;    
+    text-decoration: none;  
+    position: relative;  
 }
 
 .van-tile img {

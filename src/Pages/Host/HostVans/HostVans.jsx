@@ -1,6 +1,7 @@
 import {React ,useEffect, useState} from 'react'
 import './HostVans.css'
 import { Link } from "react-router-dom"
+import Loaders from '../../../components/Loaders/Loaders'
 
 export default function HostVans() {
 
@@ -14,7 +15,7 @@ export default function HostVans() {
 
     const hostVansEls = vans.map(van => (
         <Link
-            to={`/host/vans/${van.id}`}
+            to={van.id}
             key={van.id}
             className="host-van-link-wrapper"
         >
@@ -39,7 +40,7 @@ export default function HostVans() {
                         </section>
 
                     ) : (
-                            <h2>Loading...</h2>
+                            <Loaders/>
                         )
                 }
             </div>

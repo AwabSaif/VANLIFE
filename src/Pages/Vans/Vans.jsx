@@ -20,7 +20,7 @@ export default function Vans() {
   vans.filter(van => van.type === typeFilter) : vans
   const vanElements = displayedVans.map(van => (
       <div key={van.id} className="van-tile">
-          <Link to={`/vans/${van.id}`}>
+          <Link to={van.id} state={{ search:`?${ searchParams.toString()}` , type: typeFilter }} >
               <img src={van.imageUrl} />
               <div className="van-info">
                   <h3>{van.name}</h3>
@@ -47,17 +47,17 @@ export default function Vans() {
           <div className="van-list-filter-buttons">
             <button 
             onClick={() => handleFilterChange("type",'simple')} 
-            className="van-type simple"  >
+            className={`van-type simple ${typeFilter === 'simple' ? "selected" : ""}`}  >
                 Simple
                 </button>
             <button 
             onClick={() => handleFilterChange("type",'rugged')} 
-            className="van-type rugged" >
+            className={`van-type rugged ${typeFilter === 'rugged' ? "selected" : ""}`} >
                 Rugged
                 </button>
             <button 
             onClick={() => handleFilterChange("type",'luxury')} 
-             className="van-type luxury" >
+             className={`van-type luxury ${typeFilter === 'luxury' ? "selected" : ""}`} >
                 Luxury
                 </button>
            { typeFilter ? (<button 
