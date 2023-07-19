@@ -7,8 +7,8 @@ export default function DetailVan() {
     const params = useParams()
     const [van, setVan] = useState(null)
 
-    useEffect(() => {
-        fetch(`/vans/${params.id}`)
+  useEffect(() => {
+        fetch(`/api/vans/${params.id}`)
             .then(res => res.json())
             .then(data => setVan(data.vans))
     }, [params.id])

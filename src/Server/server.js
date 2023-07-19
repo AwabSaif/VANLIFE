@@ -16,7 +16,7 @@ createServer({
     },
 
     routes() {
-        this.namespace = "api"
+        this.namespace = "/api"
         this.logging = false
 
         this.get("/vans", (schema, request) => {
@@ -30,12 +30,10 @@ createServer({
         })
 
         this.get("/host/vans", (schema, request) => {
-            // Hard-code the hostId for now
             return schema.vans.where({ hostId: "123" })
         })
 
         this.get("/host/vans/:id", (schema, request) => {
-            // Hard-code the hostId for now
             const id = request.params.id
             return schema.vans.where({ id, hostId: "123" })
         })
