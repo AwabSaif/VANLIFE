@@ -15,7 +15,7 @@ export default function HostVanDetail() {
    useEffect(() => {
         fetch(`/api/host/vans/${id}`)
             .then(res => res.json())
-            .then(data => setCurrentVan(data.vans))
+            .then(data => setCurrentVan(data.vans) )
         }, [])
 
     if (!currentVan) {
@@ -48,7 +48,7 @@ export default function HostVanDetail() {
                <NavLink to='pricing' style={({isActive}) => isActive ? ActiveStyle :null} >Pricing</NavLink>
                <NavLink to='photos' style={({isActive}) => isActive ? ActiveStyle :null} >Photos</NavLink>
                 </nav>
-            <Outlet />
+            <Outlet context={{currentVan}} />
         </div>
         </section>
     )
