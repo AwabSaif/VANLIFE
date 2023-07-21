@@ -71,3 +71,9 @@
 .host-dashboard-vans .host-vans-list {
     padding-inline: 0;
 }
+a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 600;
+    padding: 5px 10px;
+  }

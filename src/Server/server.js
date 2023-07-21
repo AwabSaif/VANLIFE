@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs"
+/* import { createServer, Model } from "miragejs"
 import ModestExplorerIMg from '../assets/images/Rectangle 162.png'
 import BeachBumIMg from '../assets/images/Rectangle 163.png'
 import ReliableRedIMg from '../assets/images/alpert-wang-rxQL0ieF_Bs-unsplash 2.png'
@@ -23,11 +23,12 @@ createServer({
         
         server.create("user", { id: "123", email: "Awab@awab.com", password: "A123", name: "Awab" })
     },
+    
     routes() {
         this.namespace = "api"
         this.logging = false
         // this.timing = 2000  // => mock a 2 second delay in server response
-
+        this.passthrough("https://firestore.googleapis.com/**")
         this.get("/vans", (schema, request) => {
             // return new Response(400, {}, {error: "Error fetching data"})
             return schema.vans.all()
@@ -67,4 +68,4 @@ createServer({
             }
         })
     }
-})
+}) */

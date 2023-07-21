@@ -3,20 +3,20 @@ import { Outlet , Navigate , useLocation}  from 'react-router-dom'
 import HostLayout from '../HostLayout/HostLayout'
 
 export default function AuthRequired() {
-    const authenticated = localStorage.getItem("loggedin") 
-    const loaction = useLocation()
-    console.log(loaction)
 
-    if(!authenticated){
-
-        return (<Navigate 
-            to='/login'  
-            state={{
-                message: "You must log in first",
-                from: loaction.pathname
-            }}
-            replace 
-            />)
+        const isLoggedIn = localStorage.getItem("loggedin")
+        const location = useLocation()
+        
+        if (!isLoggedIn) {
+            return (
+                <Navigate 
+                    to="/login" 
+                    state={{
+                        message: "You must log in first",
+                        from: location.pathname
+                    }} 
+                    replace
+                />)
+        }
+        return <Outlet />
     }
-    return <Outlet/>
-}
