@@ -27,6 +27,7 @@ export default function Dashboard() {
               <Link to={`vans/${van.id}`}>View</Link>
           </div>
       ))
+       
 
       return (
           <div className="host-vans-list">
@@ -40,7 +41,10 @@ export default function Dashboard() {
   if (error) {
       return <h1>Error: {error.message}</h1>
   }
-
+ function fakeLogOut() {
+    localStorage.removeItem("loggedin")
+    to='login'
+}
   return (
       <>
           <section className="host-dashboard-earnings">
@@ -75,7 +79,7 @@ export default function Dashboard() {
                       </>
                   )
               }
-             
+                  <button onClick={fakeLogOut}  >Log Out</button>
           </section>
       </>
   )

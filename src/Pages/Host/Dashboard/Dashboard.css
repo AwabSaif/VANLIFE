@@ -77,3 +77,14 @@ a {
     font-weight: 600;
     padding: 5px 10px;
   }
+button {
+    background-color:#ff8c38;
+    padding:20px 50px;
+    font-weight: 900;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: #FFCC8D;
+}
