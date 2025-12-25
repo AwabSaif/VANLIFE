@@ -1,133 +1,133 @@
 # VANLIFE
 
-منصة إيجار الشاحنات الصغيرة (Vans) لتجربة السفر والرحلات البرية.
+A van rental platform for travel and road trip experiences.
 
-## الوصف
+## Description
 
-تطبيق ويب مبني باستخدام React يتيح للمستخدمين استئجار الشاحنات الصغيرة للرحلات البرية. يحتوي التطبيق على واجهة للمستخدمين العاديين ولوحة تحكم للمضيفين لإدارة شاحناتهم.
+A web application built with React that allows users to rent vans for road trips. The application features a user interface for regular users and a dashboard for hosts to manage their vans.
 
-## المميزات
+## Features
 
-### للمستخدمين
-- تصفح قائمة الشاحنات المتاحة
-- عرض تفاصيل كل شاحنة
-- البحث والتصفية حسب النوع
-- صفحة حول المشروع
+### For Users
+- Browse available vans
+- View detailed information for each van
+- Search and filter by type
+- About page
 
-### للمضيفين
-- لوحة تحكم شاملة
-- إدارة الشاحنات (عرض، تعديل المعلومات، الصور، الأسعار)
-- عرض الإيرادات
-- عرض المراجعات والتقييمات
-- حماية المسارات التي تتطلب تسجيل الدخول
+### For Hosts
+- Comprehensive dashboard
+- Van management (view, edit information, photos, pricing)
+- View income
+- View reviews and ratings
+- Protected routes requiring authentication
 
-## التقنيات المستخدمة
+## Technologies Used
 
 - React 18.2.0
 - React Router DOM 6.14.2
 - Vite 4.4.0
 - Firebase 10.0.0 (Firestore)
-- MirageJS 0.1.47 (للمحاكاة أثناء التطوير)
+- MirageJS 0.1.47 (for development mocking)
 - React Icons 4.10.1
 - Classnames 2.3.2
 
-## متطلبات التشغيل
+## Prerequisites
 
-- Node.js (الإصدار 16 أو أحدث)
-- npm أو yarn
+- Node.js (version 16 or higher)
+- npm or yarn
 
-## التثبيت
+## Installation
 
-1. استنسخ المستودع:
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 ```
 
-2. انتقل إلى مجلد المشروع:
+2. Navigate to the project directory:
 ```bash
 cd vanslife
 ```
 
-3. ثبت الحزم:
+3. Install dependencies:
 ```bash
 npm install
 ```
 
-## التشغيل
+## Running the Application
 
-### وضع التطوير
+### Development Mode
 ```bash
 npm run dev
 ```
-سيتم تشغيل التطبيق على `http://localhost:5173`
+The application will run on `http://localhost:5173`
 
-### بناء المشروع للإنتاج
+### Build for Production
 ```bash
 npm run build
 ```
 
-### معاينة البناء
+### Preview Production Build
 ```bash
 npm run preview
 ```
 
-### فحص الكود
+### Lint Code
 ```bash
 npm run lint
 ```
 
-## هيكل المشروع
+## Project Structure
 
 ```
 src/
-├── API/              # ملفات API واتصال Firebase
-├── assets/           # الصور والموارد الثابتة
-├── components/       # المكونات القابلة لإعادة الاستخدام
-│   ├── AuthRequired/    # حماية المسارات
-│   ├── Container/        # الحاوية الرئيسية
-│   ├── Error/            # معالج الأخطاء
-│   ├── Footer/           # التذييل
-│   ├── Header/           # الرأس
-│   ├── HostLayout/       # تخطيط لوحة المضيف
-│   └── Loaders/          # مؤشرات التحميل
-└── Pages/            # صفحات التطبيق
-    ├── About/            # صفحة حول
-    ├── DetailVan/        # تفاصيل الشاحنة
-    ├── Home/             # الصفحة الرئيسية
-    ├── Host/             # صفحات المضيف
-    │   ├── Dashboard/        # لوحة التحكم
-    │   ├── HostVanInfo/      # معلومات الشاحنة
-    │   ├── HostVans/         # قائمة شاحنات المضيف
-    │   ├── Income/           # الإيرادات
-    │   └── Reviews/          # المراجعات
-    ├── Login/            # صفحة تسجيل الدخول
-    ├── NotFound/         # صفحة 404
-    └── Vans/             # قائمة الشاحنات
+├── API/              # API files and Firebase connection
+├── assets/           # Images and static resources
+├── components/       # Reusable components
+│   ├── AuthRequired/    # Route protection
+│   ├── Container/        # Main container
+│   ├── Error/            # Error handler
+│   ├── Footer/           # Footer
+│   ├── Header/           # Header
+│   ├── HostLayout/       # Host dashboard layout
+│   └── Loaders/          # Loading indicators
+└── Pages/            # Application pages
+    ├── About/            # About page
+    ├── DetailVan/        # Van details
+    ├── Home/             # Home page
+    ├── Host/             # Host pages
+    │   ├── Dashboard/        # Dashboard
+    │   ├── HostVanInfo/      # Van information
+    │   ├── HostVans/         # Host vans list
+    │   ├── Income/           # Income
+    │   └── Reviews/          # Reviews
+    ├── Login/            # Login page
+    ├── NotFound/         # 404 page
+    └── Vans/             # Vans list
 ```
 
-## المسارات
+## Routes
 
-- `/` - الصفحة الرئيسية
-- `/about` - صفحة حول المشروع
-- `/vans` - قائمة الشاحنات
-- `/vans/:id` - تفاصيل شاحنة محددة
-- `/login` - تسجيل الدخول
-- `/host` - لوحة تحكم المضيف (يتطلب تسجيل الدخول)
-- `/host/income` - الإيرادات
-- `/host/reviews` - المراجعات
-- `/host/vans` - إدارة الشاحنات
-- `/host/vans/:id` - تفاصيل شاحنة المضيف
-- `/host/vans/:id/photos` - إدارة صور الشاحنة
-- `/host/vans/:id/pricing` - إدارة أسعار الشاحنة
+- `/` - Home page
+- `/about` - About page
+- `/vans` - Vans listing
+- `/vans/:id` - Specific van details
+- `/login` - Login page
+- `/host` - Host dashboard (requires authentication)
+- `/host/income` - Income
+- `/host/reviews` - Reviews
+- `/host/vans` - Van management
+- `/host/vans/:id` - Host van details
+- `/host/vans/:id/photos` - Van photos management
+- `/host/vans/:id/pricing` - Van pricing management
 
-## التكوين
+## Configuration
 
-يستخدم التطبيق Firebase Firestore لتخزين البيانات. تأكد من تكوين ملف `src/API/api.js` بإعدادات Firebase الخاصة بك.
+The application uses Firebase Firestore for data storage. Make sure to configure `src/API/api.js` with your Firebase settings.
 
-## الترخيص
+## License
 
-هذا المشروع خاص.
+This project is private.
 
-## المساهمة
+## Contributing
 
-للمساهمة في المشروع، يرجى فتح Issue أو Pull Request.
+To contribute to the project, please open an Issue or Pull Request.
