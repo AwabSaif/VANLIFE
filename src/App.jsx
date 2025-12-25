@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import "./Server/server"
@@ -20,11 +20,6 @@ import Error from "./components/Error/Error"
 import NotFound from "./Pages/NotFound/NotFound"
 import HostLayout from "./components/HostLayout/HostLayout"
 import AuthRequired from "./components/AuthRequired/AuthRequired"
-import Loaders from './components/Loaders/Loaders';
-
-
-
-
 
 
 
@@ -42,7 +37,6 @@ export default function App() {
             path="vans"
             element={<Vans />}
             errorElement={<Error />}
-            loader={<Loaders/>}
           />
           <Route path="vans/:id" element={<DetailVan />} />
 
